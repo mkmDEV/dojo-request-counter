@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, render_template
+from flask import Flask, request, url_for, render_template, redirect
 
 app = Flask(__name__)
 counts = 0
@@ -14,7 +14,7 @@ def request_counter():
     global counts
     if request.method == 'GET':
         counts += 1
-        return counts
+        return redirect('/')
 
 
 if __name__ == '__main__':
